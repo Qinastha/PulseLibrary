@@ -1,7 +1,12 @@
 {
-  "name": "projectlibrary",
-  "version": "0.1.0",
+  "name": "@Qinastha/pulse_library",
+  "version": "0.1.1",
   "description": "Library for custom components and utilities for Pulse Project",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/Qinastha"
+  },
+  "author": "Qinastha",
+  "license": "MIT",
   "scripts": {
     "rollup": "rollup -c --bundleConfigAsCjs"
   },

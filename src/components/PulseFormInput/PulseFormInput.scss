@@ -1,3 +1,5 @@
-.button {
-    color:black;
+@import "../../styles/index";
+
+.pulse-form-input {
+    @include base-input-styles;
 }

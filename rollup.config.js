@@ -25,15 +25,15 @@ export default [
             resolve(),
             commonjs(),
             postcss({
-                extensions: ['.css', '.scss'],
-                use: [
-                    ['sass', {
-                        includePaths: ['./src/styles'],
-                    }]
-                ],
                 extract: true,
-                minimize: true,
-                sourceMap: true,
+                plugins: [
+                    require('postcss-import'),
+                    require('postcss-preset-env')({
+                        stage: 0,
+                    }),
+                ],
+                extensions: ['.css', '.scss'],
+                use: ['sass'],
             }),
             typescript({ tsconfig: "./tsconfig.json" }),
         ],

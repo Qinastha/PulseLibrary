@@ -1,14 +1,31 @@
 import React from "react";
-import "./PulseFormInput.scss"
+import "./PulseFormInput.scss";
+import {RequiredInput} from "../PulseForm/PulseForm";
 
-export interface ButtonProps {
-    label: string;
+export interface PulseFormInputProps {
+    inputData: RequiredInput;
+    inputValue: any;
+    onChange: (e: any) => void;
 }
 
-const PulseFormInput:React.FC<ButtonProps> = (props) => {
+export const PulseFormInput: React.FC<PulseFormInputProps> = ({
+                                                                  inputData,
+                                                                  inputValue,
+                                                                  onChange,
+                                                              }) => {
+    const { type, name, required, autoComplete } = inputData;
+
     return (
-   <button className="button">{props.label}</button>
-)
+        <input
+            type={type}
+            name={name}
+            className="pulse-form-input"
+            required={required}
+            value={inputValue}
+            onChange={e => onChange(e)}
+            autoComplete={autoComplete}
+        />
+    );
 };
 
-export default PulseFormInput;
+export default PulseFormInput

@@ -1,6 +1,6 @@
 {
   "name": "@Qinastha/pulse_library",
-  "version": "0.2.5",
+  "version": "0.3.1",
   "description": "Library for custom components and utilities for Pulse Project",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/Qinastha"
@@ -8,7 +8,7 @@
   "author": "Qinastha",
   "license": "MIT",
   "scripts": {
-    "rollup": "rollup -c --bundleConfigAsCjs"
+    "rollup": "rollup -c"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^26.0.1",
@@ -34,14 +34,15 @@
     "react-dom": "^18.3.1"
   },
   "type": "module",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/index.d.ts",
   "styles": "dist/styles.css",
   "files": [
     "dist"
   ],
   "dependencies": {
-    "rollup-plugin-scss": "^4.0.0"
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-json": "^6.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-scss": "^4.0.0",
+    "rollup-plugin-terser": "^7.0.2"
   }
 }

@@ -35,13 +35,13 @@ export default [
                 extensions: ['.css', '.scss'],
                 use: ['sass'],
             }),
-            typescript({ tsconfig: "./tsconfig.json" }),
+            typescript({tsconfig: "./tsconfig.json"}),
         ],
         external: ["react", "react-dom"],
     },
     {
         input: "dist/esm/types/index.d.ts",
-        output: [{ file: "dist/index.d.ts", format: "esm" }],
+        output: [{file: "dist/index.d.ts", format: "esm"}],
         plugins: [dts()],
         external: [/\.scss$/]
     },

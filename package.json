@@ -1,6 +1,6 @@
 {
   "name": "@Qinastha/pulse_library",
-  "version": "0.2.0",
+  "version": "0.2.5",
   "description": "Library for custom components and utilities for Pulse Project",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/Qinastha"
@@ -40,5 +40,8 @@
   "styles": "dist/styles.css",
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "rollup-plugin-scss": "^4.0.0"
+  }
 }

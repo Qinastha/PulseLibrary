@@ -3,7 +3,7 @@
     "outDir": "dist",
     "module": "ESNext",
     "target": "ES5",
-    "lib": ["ES6", "DOM","DOM.Iterable", "ScriptHost", "ES2016.Array.Include"],
+    "lib": ["ES6", "DOM"],
     "declaration": true,
     "jsx": "react",
     "esModuleInterop": true,
@@ -22,7 +22,7 @@
 //    "isolatedModules": true
   },
   "include": [
-    "src/**/*"
+    "src"
   ],
   "exclude": [
     "node_modules",

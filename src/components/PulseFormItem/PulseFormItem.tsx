@@ -1,15 +1,12 @@
 import "./PulseFormItem.scss";
 import React from "react";
 import {RequiredInput} from "../PulseForm/PulseForm";
-import {
-    DragFile,
-    PulseFormChecklist,
-    PulseFormDateInput,
-    PulseFormInput,
-    PulseFormSearch,
-    PulseFormSelect
-} from "../index";
-import {Member} from "../PulseFormSearch/PulseFormSearch";
+import PulseFormSearch, {Member} from "../PulseFormSearch/PulseFormSearch";
+import PulseFormSelect from "../PulseFormSelect";
+import DragFile from "../DragFile";
+import PulseFormChecklist from "../PulseFormChecklist";
+import PulseFormDateInput from "../PulseFormDateInput";
+import PulseFormInput from "../PulseFormInput";
 
 export interface PulseFormItemProp {
     inputData: RequiredInput;

@@ -1,6 +1,6 @@
 import React from "react";
 import "./PulseForm.scss";
-import {PulseFormItem} from "../index";
+import PulseFormItem from "../PulseFormItem";
 import {Member} from "../PulseFormSearch/PulseFormSearch";
 
 export interface RequiredInput {

@@ -20,11 +20,11 @@
     @include box-shadow($box-shadow);
 
     input[type="text"] {
-      @include base-input-styles;
       flex-grow: 1;
       padding: 8px;
       border: 1px solid $border-color;
       border-radius: 4px;
+      @include base-input-styles;
 
       &:focus {
         outline: none;

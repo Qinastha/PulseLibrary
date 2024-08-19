@@ -5,6 +5,7 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 import { terser } from 'rollup-plugin-terser';
 import scss from 'rollup-plugin-scss';
+import autoprefixer from 'autoprefixer';
 
 
 export default [
@@ -30,9 +31,9 @@ export default [
             scss({
                 output: 'dist/bundle.css',
                 outputStyle: 'compressed',
-                includePaths: ['src/styles'],
             }),
             postcss({
+                plugins: [autoprefixer()],
                 extensions: ['.css', '.scss'],
                 use: ['sass'],
                 extract: true,

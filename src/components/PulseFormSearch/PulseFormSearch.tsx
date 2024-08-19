@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {PulseFormInput, PulseFormInputProps,} from "../PulseFormInput/PulseFormInput";
 import "./PulseFormSearch.scss";
-import useDebounce from "../useDebounce";
+import useDebounce from "../../hooks/useDebounce";
 
 
 export interface Member {

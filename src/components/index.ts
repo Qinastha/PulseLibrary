@@ -6,6 +6,4 @@ export {default as PulseFormSearch} from "./PulseFormSearch";
 export {default as DragFile} from "./DragFile";
 export {default as PulseFormItem} from "./PulseFormItem";
 export {default as PulseForm} from "./PulseForm";
-export {default as useDebounce} from "./useDebounce";
-export {default as useViewport} from "./useViewport";
 export {default as LogoLoader} from "./LogoLoader";

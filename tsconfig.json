@@ -10,7 +10,7 @@
     "skipLibCheck": true,
     "strict": true,
 //    "forceConsistentCasingInFileNames": true,
-//    "moduleResolution": "node",
+    "moduleResolution": "node",
 //    "noEmit": true,
 //    "allowSyntheticDefaultImports": true,
 //    "declarationDir": "./dist/types",

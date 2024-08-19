@@ -1,36 +1,30 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "esModuleInterop": true,
-    "strict": true,
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "noEmit": true,
-    "jsx": "react",
-    "allowSyntheticDefaultImports": true,
-    "declaration": true,
-    "declarationDir": "./dist/types",
-    "sourceMap": true,
     "outDir": "dist",
-    "emitDeclarationOnly": true,
-    "allowJs": true,
-    "noFallthroughCasesInSwitch": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true
+    "module": "ESNext",
+    "target": "ES5",
+    "lib": ["ES6", "DOM","DOM.Iterable", "ScriptHost", "ES2016.Array.Include"],
+    "declaration": true,
+    "jsx": "react",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true,
+//    "forceConsistentCasingInFileNames": true,
+//    "moduleResolution": "node",
+//    "noEmit": true,
+//    "allowSyntheticDefaultImports": true,
+//    "declarationDir": "./dist/types",
+//    "sourceMap": true,
+//    "emitDeclarationOnly": true,
+//    "allowJs": true,
+//    "noFallthroughCasesInSwitch": true,
+//    "resolveJsonModule": true,
+//    "isolatedModules": true
   },
   "include": [
     "src/**/*"
   ],
   "exclude": [
-    "src/**/__docs__",
-    "src/**/__test__",
     "node_modules",
     "dist"
   ]

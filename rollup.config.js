@@ -27,17 +27,10 @@ export default [
             resolve(),
             commonjs(),
             typescript({ tsconfig: './tsconfig.json' }),
-            scss({
-                output: 'dist/styles/main.css',
-                outputStyle: 'compressed',
-            }),
             postcss({
-                extract: 'dist/styles/main.css',
-                extensions: ['.css', '.scss'],
                 use: ['sass'],
                 extract: true,
                 minimize: true,
-                sourceMap: true,
             }),
             terser(),
         ],

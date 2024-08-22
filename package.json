@@ -1,6 +1,6 @@
 {
   "name": "@Qinastha/pulse_library",
-  "version": "0.5.0",
+  "version": "0.5.5",
   "description": "Library for custom components and utilities for Pulse Project",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/Qinastha"

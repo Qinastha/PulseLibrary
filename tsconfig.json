@@ -3,23 +3,26 @@
     "outDir": "dist",
     "module": "ESNext",
     "target": "ES5",
-    "lib": ["ES6", "DOM"],
+    "lib": [
+      "ES6",
+      "DOM"
+    ],
     "declaration": true,
     "jsx": "react",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "strict": true,
-//    "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node",
-//    "noEmit": true,
-//    "allowSyntheticDefaultImports": true,
-//    "declarationDir": "./dist/types",
-//    "sourceMap": true,
-//    "emitDeclarationOnly": true,
-//    "allowJs": true,
-//    "noFallthroughCasesInSwitch": true,
-//    "resolveJsonModule": true,
-//    "isolatedModules": true
+    "moduleResolution": "node"
+    //    "forceConsistentCasingInFileNames": true,
+    //    "noEmit": true,
+    //    "allowSyntheticDefaultImports": true,
+    //    "declarationDir": "./dist/types",
+    //    "sourceMap": true,
+    //    "emitDeclarationOnly": true,
+    //    "allowJs": true,
+    //    "noFallthroughCasesInSwitch": true,
+    //    "resolveJsonModule": true,
+    //    "isolatedModules": true
   },
   "include": [
     "src"

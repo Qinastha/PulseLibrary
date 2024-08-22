@@ -2,9 +2,9 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import postcss from 'rollup-plugin-postcss';
-import { terser } from 'rollup-plugin-terser';
+import {terser} from 'rollup-plugin-terser';
 import scss from 'rollup-plugin-scss';
+import postcss from "postcss";
 
 
 export default [
@@ -26,18 +26,11 @@ export default [
             peerDepsExternal(),
             resolve(),
             commonjs(),
-            typescript({ tsconfig: './tsconfig.json' }),
-            scss({
-                output: 'dist/styles/main.css',
-                outputStyle: 'compressed',
-            }),
+            typescript({tsconfig: './tsconfig.json'}),
             postcss({
-                extract: 'dist/styles/main.css',
-                extensions: ['.css', '.scss'],
                 use: ['sass'],
                 extract: true,
                 minimize: true,
-                sourceMap: true,
             }),
             terser(),
         ],

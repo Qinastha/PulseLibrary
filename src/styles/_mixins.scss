@@ -1,4 +1,4 @@
-@import "variables";
+@import "./variables";
 
 @mixin transition($property, $duration, $timing-function: ease) {
   transition: $property $duration $timing-function;
@@ -51,7 +51,7 @@
 
 @mixin box-shadow($shadow) {
   box-shadow: $shadow;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 @mixin base-button {
@@ -59,7 +59,8 @@
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease-in-out;
+  box-sizing: border-box;
 }
 
 @mixin base-input-styles {
@@ -83,6 +84,10 @@
 
   &:active {
     border-color: $sakura-active-border-color;
+  }
+
+  &::placeholder {
+    color: $text-muted;
   }
 }
 

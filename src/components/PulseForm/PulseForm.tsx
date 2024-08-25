@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./PulseForm.scss";
 import PulseFormItem from "../PulseFormItem";
 import {Member} from "../PulseFormSearch/PulseFormSearch";
@@ -23,6 +23,7 @@ export interface PulseFormProps {
     isNewTask?: boolean;
     theme?: string;
     allMembers?: Member[];
+    currentUser?: Member;
     onChange: (e: any) => void;
     handleFile?: (e: string) => void;
     onSubmit?: (e: React.FormEvent<HTMLFormElement>) => void;
@@ -36,10 +37,12 @@ const PulseForm: React.FC<PulseFormProps> = ({
                                                  isNewTask = false,
                                                  theme,
                                                  allMembers,
+                                                 currentUser,
                                                  onChange,
                                                  handleFile,
                                                  onSubmit,
                                              }) => {
+
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
@@ -60,10 +63,11 @@ const PulseForm: React.FC<PulseFormProps> = ({
                         errors={errors}
                         isNewTask={isNewTask}
                         className="pulse-form-fields"
-                        onChange={(e: any) => onChange(e)}
-                        handleFile={(e: any) => handleFile!(e)}
                         theme={theme}
                         allMembers={allMembers}
+                        currentUser={currentUser}
+                        onChange={(e: any) => onChange(e)}
+                        handleFile={(e: any) => handleFile!(e)}
                     />
                 ))}
             </form>

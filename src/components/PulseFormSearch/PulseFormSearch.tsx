@@ -5,7 +5,6 @@ import useDebounce from "../../hooks/useDebounce";
 
 
 export interface Member {
-    email: string;
     firstName: string;
     lastName: string;
     userName: string;
@@ -13,7 +12,8 @@ export interface Member {
 
 export interface PulseFormSearchProps extends PulseFormInputProps {
     allMembers: Member[];
-    theme: string;
+    user: Member;
+    theme?: string;
 }
 
 
@@ -22,6 +22,7 @@ const PulseFormSearch: React.FC<PulseFormSearchProps> = ({
                                                              inputValue = [],
                                                              onChange,
                                                              allMembers,
+                                                             user,
                                                              theme,
                                                          }) => {
     const [memberSearch, setMemberSearch] = useState("");
@@ -32,21 +33,16 @@ const PulseFormSearch: React.FC<PulseFormSearchProps> = ({
         if (debouncedMembers.trim() !== "") {
             const filter = allMembers.filter((member: Member) => {
                 return (
-                    (member.firstName
-                            .toLowerCase()
-                            .includes(debouncedMembers.toLowerCase()) ||
-                        member.lastName
-                            .toLowerCase()
-                            .includes(debouncedMembers.toLowerCase()) ||
-                        member.userName
-                            .toLowerCase()
-                            .includes(debouncedMembers.toLowerCase()) ||
-                        member.email
-                            .toLowerCase()
-                            .includes(debouncedMembers.toLowerCase())) &&
+                    member.userName !== user.userName &&
+                    member.firstName !== user.firstName &&
+                    member.lastName !== user.lastName && (
+                        member.firstName.toLowerCase().includes(debouncedMembers.toLowerCase()) ||
+                        member.lastName.toLowerCase().includes(debouncedMembers.toLowerCase()) ||
+                        member.userName.toLowerCase().includes(debouncedMembers.toLowerCase())) &&
+
                     !inputValue.some(
                         (inputValue: { userName: string }) =>
-                            inputValue.userName === member.userName,
+                            inputValue.userName === member.userName
                     )
                 );
             });
@@ -99,9 +95,9 @@ const PulseFormSearch: React.FC<PulseFormSearchProps> = ({
                     <div className="project-pop__selected-list">
                         {inputValue.map((member: Member, index: number) => (
                             <div key={index} className="project-pop__selected-member">
-                <span>
-                  {member.firstName} {member.lastName}
-                </span>
+                                <span>
+                                    {member.firstName} {member.lastName}
+                                </span>
                                 <button
                                     type="button"
                                     className="project-pop__delete-button"

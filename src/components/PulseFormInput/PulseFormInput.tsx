@@ -13,7 +13,7 @@ export const PulseFormInput: React.FC<PulseFormInputProps> = ({
                                                                   inputValue,
                                                                   onChange,
                                                               }) => {
-    const { type, name, required, autoComplete } = inputData;
+    const {type, name, required, autoComplete} = inputData;
 
     return (
         <input

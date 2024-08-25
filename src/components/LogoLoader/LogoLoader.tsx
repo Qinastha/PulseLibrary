@@ -1,5 +1,5 @@
-import "./LogoLoader.scss";
 import React from "react";
+import "./LogoLoader.scss"
 
 const LogoLoader: React.FC = () => {
     return (

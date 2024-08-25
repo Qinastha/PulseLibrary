@@ -1,11 +1,8 @@
 import React from "react";
 import "./PulseFormSelect.scss"
-import {RequiredInput} from "../PulseForm/PulseForm";
+import {PulseFormInputProps} from "../PulseFormInput/PulseFormInput";
 
-interface PulseFormSelectProps {
-    inputData: RequiredInput;
-    inputValue: any;
-    onChange: (e: any) => void;
+interface PulseFormSelectProps extends PulseFormInputProps {
 }
 
 const PulseFormSelect: React.FC<PulseFormSelectProps> = ({

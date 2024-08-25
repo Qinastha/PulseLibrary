@@ -85,7 +85,7 @@
       flex-direction: row;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 25px;
+      margin-top: 1rem;
     }
 
     .project-pop__selected-member {
@@ -136,5 +136,39 @@
     .project-pop__selected-members {
       height: 30vh;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .pulse-form {
+
+    label {
+      font-size: 0.8rem;
+    }
+  }
+
+  .pulse-form-input {
+    font-size: 0.8rem;
+    padding: 5px;
+  }
+
+  .project-pop__search-container {
+    height: 15vh;
+  }
+
+  .project-pop__search-container .project-pop__selected-members {
+    p {
+      font-size: 0.7rem;
+    }
+  }
+
+  .project-pop__search-container .project-pop__selected-members .project-pop__selected-member {
+    font-size: 0.7rem;
+    padding: 2px;
+    margin-top: 0.1rem;
+  }
+
+  .project-pop__search-container .project-pop__user-add .project-pop__user-list .project-pop__user-item .project-pop__select-button {
+    font-size: 0.7rem;
   }
 }

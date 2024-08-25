@@ -7,27 +7,37 @@
   cursor: pointer;
   height: 25vh;
   width: 40vh;
+  max-width: 100%;
   border-radius: 10px;
   margin: 0 auto;
+  box-sizing: border-box;
   transition: border-color 0.3s ease,
   box-shadow 0.3s ease;
+  position: relative;
 
   &:hover {
     border-color: lighten($primary-color, 10%);
-    box-shadow: $box-shadow;
+    box-shadow: $box-shadow, -($box-shadow);
   }
 
   .placeholder {
     color: darken($primary-color, 20%);
-    font-size: 2.2rem;
-    text-align: center;
-    margin-top: 5rem;
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
-  img {
-    width: 40vh;
-    height: 25vh;
+  .filePreview {
+    width: 35vh;
+    height: 20vh;
+    max-width: 95%;
     object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   input {
@@ -42,14 +52,18 @@
 @media (max-width: 768px) {
   .dragAvatar {
     width: 30vh;
+    height: 20vh;
+    max-height: 95%;
 
     .placeholder {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
-  }
 
-  .filePreview {
-    max-width: 30vh;
+    .filePreview {
+      width: 25vh;
+      height: 15vh;
+      object-fit: contain;
+    }
   }
 }
 
@@ -58,9 +72,16 @@
     height: 40vh;
     width: 80vh;
 
-    img {
-      width: 80vh;
-      height: 40vh;
+    .placeholder {
+      font-size: 1.2rem;
+      word-break: break-word;
+    }
+
+    .filePreview {
+      height: 35vh;
+      width: 75vh;
+      object-fit: contain;
     }
   }
 }
+

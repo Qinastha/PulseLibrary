@@ -17,6 +17,7 @@ export interface PulseFormItemProp {
     readOnly?: boolean;
     theme?: string;
     allMembers?: Member[];
+    currentUser?: Member;
     onChange: (e: any) => void;
     handleFile?: (e: string) => void;
 }
@@ -27,13 +28,16 @@ const PulseFormItem: React.FC<PulseFormItemProp> = ({
                                                         errors,
                                                         isNewTask = false,
                                                         className,
-                                                        onChange,
-                                                        handleFile,
                                                         readOnly,
                                                         theme = "",
-                                                        allMembers = []
+                                                        allMembers = [],
+                                                        currentUser,
+                                                        onChange,
+                                                        handleFile,
                                                     }) => {
     const {type, name, label} = inputData;
+    const user = currentUser || {firstName: "", lastName: "", userName: ""};
+
     return (
         <div className={className}>
             {!readOnly ? <label>{label}</label> : ""}
@@ -46,6 +50,7 @@ const PulseFormItem: React.FC<PulseFormItemProp> = ({
             ) : type === "file" ? (
                 <DragFile
                     data={inputValue}
+                    inputData={inputData}
                     handleFile={(e: string) => handleFile!(e)}
                 />
             ) : name === "members" ? (
@@ -54,6 +59,7 @@ const PulseFormItem: React.FC<PulseFormItemProp> = ({
                     inputValue={inputValue}
                     theme={theme}
                     allMembers={allMembers}
+                    user={user}
                     onChange={e => onChange(e)}
                 />
             ) : name === "checkList" ? (

@@ -25,3 +25,10 @@
     border: 1px solid $border-color;
   }
 }
+
+@media (max-width: 768px) {
+  .pulse-form-date {
+    font-size: 0.8rem;
+    padding: 5px;
+  }
+}

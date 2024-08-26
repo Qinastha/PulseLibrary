@@ -1,19 +1,20 @@
 @import "../../styles/index";
 
 .checklistInput {
-  padding: 15px;
+  padding: 5px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   height: 10vh;
   overflow-y: auto;
   overflow-x: hidden;
+  box-sizing: border-box;
 
   .checklistInput__item {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 8px;
+    padding: 5px;
     background-color: $background-color;
     border: 1px solid $border-color;
     @include border-radius(4px);
@@ -35,7 +36,7 @@
     .checklistInput__checkbox {
       appearance: none;
       margin-right: 10px;
-      width: 25px;
+      width: 35px;
       height: 25px;
       border: 1px solid $border-color;
       @include border-radius(4px);
@@ -87,5 +88,17 @@
 @media (max-height: 450px) {
   .checklistInput {
     height: 20vh;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .checklistInput {
+    padding: 0;
+  }
+
+  .checklistInput .checklistInput__item input[type=text] {
+    font-size: 0.8rem;
+    padding: 5px;
   }
 }

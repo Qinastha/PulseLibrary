@@ -1,46 +1,119 @@
-# Getting Started with Create React App
+# Pulse Library
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Pulse Library** is a collection of custom React components and utility hooks designed to streamline the development
+process for the Pulse Project. This library includes a set of pre-built form components, a logo loader, and custom hooks
+to help you build responsive and efficient applications with ease.
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Features](#features)
+- [Usage](#usage)
+- [Available Scripts](#available-scripts)
+- [Custom Components](#custom-components)
+- [Custom Hooks](#custom-hooks)
+- [Acknowledgements](#acknowledgements)
+
+## Installation
+
+To install the Pulse Library, use npm:
+
+```bash
+npm install @Qinastha/pulse_library@0.7.6
+```
+
+## Features
+
+- **Form Components**: Includes a customizable form component with various input types like text, select, date input,
+  image uploader, checklist, and a member search feature.
+- **Logo Loader**: A loading spinner component designed to be used during page load.
+- **Debounce Hook**: A hook for debouncing input values, ideal for optimizing search inputs or other frequently
+  triggered events.
+- **Resize Hook**: Provides the current viewport width and height, useful for responsive design.
+
+## Usage
+
+Here is a basic example of how to use the PulseForm component in your application:
+
+```javascript
+import React, {useState} from 'react';
+import PulseForm from '@Qinastha/pulse_library/dist/PulseForm';
+
+const MyComponent = () => {
+    const [inputValues, setInputValues] = useState({});
+
+    const handleChange = (e) => {
+        const {name, value} = event.target;
+        setInputValues(prevState => ({
+            ...prevState,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('Form submitted:', inputValues);
+    };
+
+    const requiredInputs = [
+        {
+            type: 'text',
+            name: 'username',
+            className: 'input-class',
+            required: true,
+            label: 'Username',
+        },
+        {
+            type: 'select',
+            name: 'role',
+            className: 'select-class',
+            required: true,
+            label: 'Role',
+            options: [
+                {name: 'Admin', value: 'admin'},
+                {name: 'User', value: 'user'},
+            ],
+        },
+    ];
+
+    return (
+        <PulseForm
+            requiredInputs={requiredInputs}
+            inputValues={inputValues}
+            formTitle="Create New User"
+            onChange={handleChange}
+            onSubmit={handleSubmit}
+        />
+    );
+};
+
+export default MyComponent;
+```
 
 ## Available Scripts
 
-In the project directory, you can run:
+- **`build`**: Bundles the library for production using Rollup.
+- **`watch`**: Watches the source files and rebuilds the library on changes.
+- **`lint`**: Runs ESLint to check for code quality issues.
+- **`test`**: Runs Jest to execute tests.
+- **`prepare`**: Prepares the package for publishing by running the build script.
 
-### `npm start`
+## Custom Components
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **PulseForm**: A versatile form component that simplifies form creation by taking a list of required inputs and
+  rendering them automatically.
+- **Form Inputs**: A collection of input components, including text input, select dropdown, date picker, image uploader,
+  checklist, and a member search feature that searches across all registered users.
+- **LogoLoader**: A customizable loading spinner that can be displayed while a page or section is loading.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Custom Hooks
 
-### `npm test`
+- **useDebounce**: A hook that delays the execution of a function until after a specified delay has passed since the
+  last time it was invoked. Ideal for optimizing performance in search input fields.
+- **useViewport**: A hook that provides the current viewport width and height, which is useful for responsive design and
+  UI adjustments based on screen size.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Acknowledgements
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Rollup**: Used as the bundler for creating optimized builds of the library.
+- **ECharts**: For powering the charting capabilities in the Pulse Project.

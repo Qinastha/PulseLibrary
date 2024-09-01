@@ -37,7 +37,7 @@ Here is a basic example of how to use the PulseForm component in your applicatio
 
 ```javascript
 import React, {useState} from 'react';
-import PulseForm from '@Qinastha/pulse_library/dist/PulseForm';
+import {PulseForm} from "@Qinastha/pulse_library";
 
 const MyComponent = () => {
     const [inputValues, setInputValues] = useState({});

@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import "./PulseForm.scss";
 import PulseFormItem from "../PulseFormItem";
 import {Member} from "../PulseFormSearch/PulseFormSearch";

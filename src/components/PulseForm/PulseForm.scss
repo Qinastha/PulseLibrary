@@ -1,12 +1,23 @@
+@import "../../styles/index";
+
 .pulse-form {
   display: flex;
   flex-direction: column;
   width: 100%;
 
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, #ffb6c1, #f0f8ff);
+    padding: 10px;
+    box-sizing: border-box;
+    color: $text-muted;
+  }
+
   .pulse-form-fields {
     margin-bottom: 15px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
   }
 }

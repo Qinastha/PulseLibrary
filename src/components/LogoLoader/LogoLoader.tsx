@@ -141,19 +141,6 @@ const LogoLoader: React.FC = () => {
         rightBase.position.set(3.75 * scaleFactor, 0.15 * scaleFactor, 0);
         toriiGate.add(rightBase);
 
-        // **Shimenawa (Sacred Rope)**
-        const ropeGeometry = new THREE.TorusKnotGeometry(
-            3.75 * scaleFactor,
-            0.05 * scaleFactor,
-            100,
-            16,
-            2,
-            3,
-        );
-        const shimenawa = new THREE.Mesh(ropeGeometry, goldMaterial);
-        shimenawa.position.set(0, 4.05 * scaleFactor, 0.45 * scaleFactor);
-        toriiGate.add(shimenawa);
-
         // **Shide (Paper Streamers)**
         const shideGroup = new THREE.Group();
         const shideGeometry = new THREE.PlaneGeometry(

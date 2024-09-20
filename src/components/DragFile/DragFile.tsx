@@ -28,7 +28,6 @@ const DragFile: React.FC<DragFileProps> = ({data, inputData, handleFile}) => {
             e.preventDefault();
             e.stopPropagation();
             const file = e.dataTransfer.files[0];
-            console.log("Dropped file:", file);
             if (file) {
                 handleFileRead(file);
             }
@@ -41,7 +40,6 @@ const DragFile: React.FC<DragFileProps> = ({data, inputData, handleFile}) => {
             e.preventDefault();
             e.stopPropagation();
             const file = e.target.files?.[0];
-            console.log("Selected file:", file);
             if (file) {
                 handleFileRead(file);
             }

@@ -52,7 +52,6 @@ const MyComponent = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Form submitted:', inputValues);
     };
 
     const requiredInputs = [

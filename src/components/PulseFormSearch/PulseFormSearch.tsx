@@ -29,6 +29,7 @@ const PulseFormSearch: React.FC<PulseFormSearchProps> = ({
     const [filteredMembers, setFilteredMembers] = useState<Member[]>([]);
     const debouncedMembers = useDebounce(memberSearch, 700);
 
+    // Filter members when input changes
     useEffect(() => {
         if (debouncedMembers.trim() !== "") {
             const filter = allMembers.filter((member: Member) => {

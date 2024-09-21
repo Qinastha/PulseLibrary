@@ -22,6 +22,7 @@ export interface PulseFormItemProp {
     handleFile?: (e: string) => void;
 }
 
+
 const PulseFormItem: React.FC<PulseFormItemProp> = ({
                                                         inputData,
                                                         inputValue,

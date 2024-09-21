@@ -5,6 +5,7 @@ interface UseHideNavProps {
     onShow: () => void;
 }
 
+// Custom hook to handle hiding and showing navigation bar
 const useHideNav = ({onHide, onShow}: UseHideNavProps) => {
     const touchStartX = useRef(0);
     const touchEndX = useRef(0);

@@ -19,17 +19,19 @@ to help you build responsive and efficient applications with ease.
 To install the Pulse Library, use npm:
 
 ```bash
-npm install @Qinastha/pulse_library@0.7.6
+npm install @Qinastha/pulse_library@0.9.3
 ```
 
 ## Features
 
 - **Form Components**: Includes a customizable form component with various input types like text, select, date input,
   image uploader, checklist, and a member search feature.
-- **Logo Loader**: A loading spinner component designed to be used during page load.
+- **Logo Loader**: A loading 3d component made with three.js to be used during page load.
 - **Debounce Hook**: A hook for debouncing input values, ideal for optimizing search inputs or other frequently
   triggered events.
 - **Resize Hook**: Provides the current viewport width and height, useful for responsive design.
+- **Hiding Hook**: A hook to hide or show elements based on a touch.
+- **Trim Utility**: An utility function to trim excessive text from a string based on a given width.
 
 ## Usage
 
@@ -103,7 +105,7 @@ export default MyComponent;
   rendering them automatically.
 - **Form Inputs**: A collection of input components, including text input, select dropdown, date picker, image uploader,
   checklist, and a member search feature that searches across all registered users.
-- **LogoLoader**: A customizable loading spinner that can be displayed while a page or section is loading.
+- **LogoLoader**: A customizable loading spinner that can be displayed while a page or section is loading. Made using three.js and SCSS.
 
 ## Custom Hooks
 
@@ -111,8 +113,10 @@ export default MyComponent;
   last time it was invoked. Ideal for optimizing performance in search input fields.
 - **useViewport**: A hook that provides the current viewport width and height, which is useful for responsive design and
   UI adjustments based on screen size.
+- **useHideNav**: A custom hook that have been used for hiding the navigation bar on smaller screens.
+- **trimText**: A utility function that trims excessive text to fit within a specified width.
 
 ## Acknowledgements
 
 - **Rollup**: Used as the bundler for creating optimized builds of the library.
-- **ECharts**: For powering the charting capabilities in the Pulse Project.
+- **Three**: Used for creating the 3D logo loader.

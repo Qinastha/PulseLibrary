@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {PulseFormInput, PulseFormInputProps,} from "../PulseFormInput/PulseFormInput";
 import "./PulseFormSearch.scss";
 import useDebounce from "../../hooks/useDebounce";
+import {useTranslation} from "react-i18next";
 
 
 export interface Member {
@@ -25,6 +26,7 @@ const PulseFormSearch: React.FC<PulseFormSearchProps> = ({
                                                              user,
                                                              theme,
                                                          }) => {
+    const {t} = useTranslation();
     const [memberSearch, setMemberSearch] = useState("");
     const [filteredMembers, setFilteredMembers] = useState<Member[]>([]);
     const debouncedMembers = useDebounce(memberSearch, 700);
@@ -109,7 +111,7 @@ const PulseFormSearch: React.FC<PulseFormSearchProps> = ({
                         ))}
                     </div>
                 ) : (
-                    <p>No selected members</p>
+                    <p>{t("noMembers")}</p>
                 )}
             </div>
             <div className="delimiter"></div>

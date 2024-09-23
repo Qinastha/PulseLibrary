@@ -7,3 +7,4 @@ export {default as DragFile} from "./DragFile";
 export {default as PulseFormItem} from "./PulseFormItem";
 export {default as PulseForm} from "./PulseForm";
 export {default as LogoLoader} from "./LogoLoader";
+export {default as LanguageSwitcher} from "./LanguageSwitcher"

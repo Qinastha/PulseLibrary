@@ -1,6 +1,7 @@
 import React from "react";
 import "./PulseFormChecklist.scss";
 import {RequiredInput} from "../PulseForm/PulseForm";
+import {useTranslation} from "react-i18next";
 
 export interface PulseFormChecklistProps {
     inputData: RequiredInput;
@@ -15,6 +16,7 @@ const PulseFormChecklist: React.FC<PulseFormChecklistProps> = ({
                                                                            isNewTask = false,
                                                                            onChange,
                                                                        }) => {
+    const {t} = useTranslation();
     const { type, name } = inputData;
 
     const onChangeChecklist = (e: any, index: number) => {
@@ -82,7 +84,7 @@ const PulseFormChecklist: React.FC<PulseFormChecklistProps> = ({
             <button
                 className="addChecklistItem--button"
                 onClick={e => addChecklistItem(e)}>
-                Add Item
+                {t("addItem")}
             </button>
         </div>
     );

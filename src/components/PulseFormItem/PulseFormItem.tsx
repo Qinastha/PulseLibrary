@@ -7,6 +7,7 @@ import DragFile from "../DragFile";
 import PulseFormChecklist from "../PulseFormChecklist";
 import PulseFormDateInput from "../PulseFormDateInput";
 import PulseFormInput from "../PulseFormInput";
+import { useTranslation } from "react-i18next";
 
 export interface PulseFormItemProp {
     inputData: RequiredInput;
@@ -37,11 +38,12 @@ const PulseFormItem: React.FC<PulseFormItemProp> = ({
                                                         handleFile,
                                                     }) => {
     const {type, name, label} = inputData;
+    const {t} = useTranslation();
     const user = currentUser || {firstName: "", lastName: "", userName: ""};
 
     return (
         <div className={className}>
-            {!readOnly ? <label>{label}</label> : ""}
+            {!readOnly ? <label>{t(`${label}`)}</label> : ""}
             {type === "select" ? (
                 <PulseFormSelect
                     inputData={inputData}

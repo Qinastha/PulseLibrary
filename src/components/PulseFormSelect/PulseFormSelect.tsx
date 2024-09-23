@@ -1,6 +1,7 @@
 import React from "react";
 import "./PulseFormSelect.scss"
 import {PulseFormInputProps} from "../PulseFormInput/PulseFormInput";
+import {useTranslation} from "react-i18next";
 
 interface PulseFormSelectProps extends PulseFormInputProps {
 }
@@ -10,6 +11,7 @@ const PulseFormSelect: React.FC<PulseFormSelectProps> = ({
                                                              inputValue,
                                                              onChange,
                                                          }) => {
+    const {t} = useTranslation();
     const {name, required, options} = inputData;
     return (
         <select
@@ -18,7 +20,7 @@ const PulseFormSelect: React.FC<PulseFormSelectProps> = ({
             required={required}
             value={inputValue}
             className="project-pulse-select">
-            <option value="">Select one</option>
+            <option value="">{t("selectOne")}</option>
             {options?.map((option: any, index: number) => (
                 <option key={index} value={option.value}>
                     {/*selected={option.value === inputValue}>*/}

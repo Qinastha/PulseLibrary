@@ -1,6 +1,7 @@
 import React, {useCallback} from "react";
 import "./DragFile.scss";
 import {RequiredInput} from "../PulseForm/PulseForm";
+import { useTranslation } from "react-i18next";
 
 export interface DragFileProps {
     data: any;
@@ -10,6 +11,7 @@ export interface DragFileProps {
 
 const DragFile: React.FC<DragFileProps> = ({data, inputData, handleFile}) => {
     const {required} = inputData
+    const {t} = useTranslation();
 
     const handleFileRead = (file: File) => {
         const reader = new FileReader();
@@ -63,7 +65,7 @@ const DragFile: React.FC<DragFileProps> = ({data, inputData, handleFile}) => {
             onDragOver={handleDragOver}
             onClick={handleClick}>
             {!data ? (
-                <p className="placeholder"> Please upload your picture </p>
+                <p className="placeholder"> {t("uploadImage")} </p>
             ) : (
                 <img className="filePreview" src={data} alt={"Avatar Preview"}/>
             )}

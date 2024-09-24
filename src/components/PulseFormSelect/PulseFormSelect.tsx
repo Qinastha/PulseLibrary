@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./PulseFormSelect.scss"
 import {PulseFormInputProps} from "../PulseFormInput/PulseFormInput";
 import {useTranslation} from "react-i18next";
@@ -12,7 +12,8 @@ const PulseFormSelect: React.FC<PulseFormSelectProps> = ({
                                                              onChange,
                                                          }) => {
     const {t} = useTranslation();
-    const {name, required, options} = inputData;
+    let {name, required, options} = inputData;
+
     return (
         <select
             name={name}
@@ -23,8 +24,7 @@ const PulseFormSelect: React.FC<PulseFormSelectProps> = ({
             <option value="">{t("selectOne")}</option>
             {options?.map((option: any, index: number) => (
                 <option key={index} value={option.value}>
-                    {/*selected={option.value === inputValue}>*/}
-                    {option.value}
+                    {t(`${option.value}`)}
                     {option.flag ? " " + option.flag : ""}
                 </option>
             ))}
